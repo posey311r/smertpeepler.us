@@ -3,7 +3,24 @@
 <title>Smerty Pie</title>
 </head>
 <body>
-<h1>We're Are Smert!</h1>
+<style>
+.yeller {
+    animation-name: turn_yeller;
+    animation-duration: 300ms;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes turn_yeller {
+    from {color: black;}
+    to {color: yellow;}
+}
+</style>
+<h1>
+<span class=yeller>We're</span> 
+<marquee width=22 direction=up scrollamount=6>A</marquee><marquee width=15 direction=up scrollamount=7>r</marquee><marquee width=15 direction=up scrollamount=8>e</marquee> 
+<marquee width=100 direction=down><marquee behavior=alternate>Smert!</marquee>
+</marquee></h1>
 
 <marquee loop><p>Are you smert?<br><marquee direction="up" scrolldelay="61" truespeed="300" loop>Do you like marquee tags?</marquee></marquee>
 <marquee direction="right" scrolldelay="500"> Well smert peepler us!</p></marquee>
