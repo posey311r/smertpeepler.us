@@ -21,9 +21,7 @@
     position: absolute;
     top: 2%;
     font-size: 150px;
-    
     width: 1000px;
-    
     animation-name: make_hate;
     animation-delay: 3s;
     animation-duration: 200ms;
@@ -48,8 +46,10 @@
 <marquee direction="right" scrolldelay="500"> Well smert peepler us!</p></marquee>
 
 <div id="the_hate_maker">SMERT!!!</div>
+<p>
 
 <a href="http://192.168.183.128/smertpeepler.us/smertpeepler.us/home.php">-ENTER-</a>
+</p>
 
 </body>
 </html>
