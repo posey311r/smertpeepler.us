@@ -6,9 +6,9 @@
 <p>Smertpeepler.us is for smert peeple like you and me. 
 <br>Get to no other peeple who r smert. Show how smert u r!!!</p>
 
-<a href="http://192.168.183.128/smertpeepler.us/smertpeepler.us/home.php">Home</a><br>
-<a href="http://192.168.183.128/smertpeepler.us/smertpeepler.us/login.php">Login</a><br>
-<a href="http://192.168.183.128/smertpeepler.us/smertpeepler.us/register.php">Register</a><br>
+<a href="home.php">Home</a><br>
+<a href="login.php">Login</a><br>
+<a href="register.php">Register</a><br>
 
 
 </body>
