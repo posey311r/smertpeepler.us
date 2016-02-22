@@ -3,7 +3,7 @@ SMERT PEEPLE REQUIREMENTS
 PHASE 1:
 --------
 Site Home Page:
- - Show example pictures and text explaining site.
+ - Show example pictures and text explaining the site.
  - Show login and registration link.
 User Registration Page:
  - Require username, password, password again, name, some other fields.
