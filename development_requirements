@@ -1,0 +1,67 @@
+SMERT PEEPLE REQUIREMENTS
+
+PHASE 1:
+--------
+Site Home Page:
+ - Show example pictures and text explaining site.
+ - Show login and registration link.
+User Registration Page:
+ - Require username, password, password again, name, some other fields.
+ - After registering, redirect to Login page.
+Login Page:
+ - Require username and password.
+ - Log user in and redirect to User Home page.
+ - Show registration link.
+User Home Page:
+ - Show user profile picture and user details.
+ - Show standard nav bar.
+User Profile Page:
+ - Show user details in editable form.
+ - Update details upon form submission.
+ - Show standard nav bar.
+
+PHASE 2:
+--------
+Password Reset Page:
+ - Show form accepting username and new password.
+ - After reset, redirect to Login page.
+Image Upload Page:
+ - Have select file button.
+ - Use javascript to write filename to page before uploading.
+ - Have final upload button submit file.
+ - Redirect to User Home page.
+View Image Page:
+ - Show title and other image metadata (uploader).
+ - Show image.
+Search Page:
+ - Show search form.
+ - Upon submitting, show results as links to View Image page and original query.
+
+PHASE 3:
+--------
+Login Page v2:
+ - Request to logged in area while not logged in will redirect user after login event.
+ - Add link to password reset.
+User Profile Page v2:
+ - Get user details via AJAX. Details returned in named JSON variable.
+Error Page:
+ - Show query string error message on default error page.
+
+
+Security Vulns:
+ - Info Disclosure - Error messages on login page.
+ - Open Redirect - Login Page should have redirect=[url] in query string when User Home or Image Upload page (both require login) is directly requested while not logged in.
+ - Base64 Decode - Session Cookie is double base64 encoded creds.
+ - Cookie Flags - Both cookie flags should be missing from session cookie. XSS will get session cookie. MitM proxying will force http request to non-existant http page and scrape session cookie from Cookie: request header.
+ - Session Fixation - Login page doesn’t update given session cookie. Unauthenticated XSS.
+ - User Enumeration - Password Reset, Registration, and Login.
+ - SQL Injection - Everywhere. Search shows all results, user profile shows 1, login is blind.
+ - Authentication/Authorization Bypass - User Profile page doesn’t require authentication.
+ - Insecure Direct Object Reference - User Profile has userid=N or username in query string.
+ - CSRF - User Profile page.
+ - Script SOP Bypass - User Profile page uses AJAX to get JSON in named variable.
+ - Local File Include - User profile picture from profilepic=location in query string.
+ - Malicious File Upload - Image Upload page.
+ - Bypassing Client-side Controls - Image Upload page will check file suffix in javascript.
+ - XSS - Reflected on Search page, Stored on View Picture page, DOM-based on pic upload with filename in document.write(). It would be nice to get a few contexts like HTML block, value attribute of input tag, and javascript block. Reflected on unauthenticated error page with message=[msg] in query string for Session Fixation.
+ - Other Injection - command injection, but where?
