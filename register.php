@@ -21,7 +21,7 @@
 	<input type="text" name="username2"><br>
 	Password:<br>
 	<input type="text" name="password"><br>
-	Re-type password:
+	Re-type password:<br>
 	<input type="text" name="password2"><br>
 	<input type="submit" value="Submit"><br>
 
