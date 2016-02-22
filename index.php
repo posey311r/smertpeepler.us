@@ -48,7 +48,7 @@
 <div id="the_hate_maker">SMERT!!!</div>
 <p>
 
-<a href="http://192.168.183.128/smertpeepler.us/smertpeepler.us/home.php">-ENTER-</a>
+<a href="home.php">-ENTER-</a>
 </p>
 
 </body>
