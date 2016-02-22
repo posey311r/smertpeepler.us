@@ -5,9 +5,9 @@
 
 <p> </p>
 
-<a href="192.168.183.128/smertpeepler.us/smertpeepler.us/home.php">Home</a><br>
-<a href="192.168.183.128/smertpeepler.us/smertpeepler.us/login.php">Login</a><br>
-<a href="192.168.183.128/smertpeepler.us/smertpeepler.us/register.php">Register</a><br>
+<a href="home.php">Home</a><br>
+<a href="login.php">Login</a><br>
+<a href="register.php">Register</a><br>
 
 
 </body>
