@@ -47,7 +47,7 @@
 
 <div id="the_hate_maker">SMERT!!!</div>
 <p>
-
+<br>
 <a href="home.php">-ENTER-</a>
 </p>
 
