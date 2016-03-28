@@ -43,7 +43,7 @@
 </marquee></h1>
 
 <marquee loop><p>Are you smert?<br><marquee direction="up" scrolldelay="61" truespeed="300" loop>Do you like marquee tags?</marquee></marquee>
-<marquee direction="right" scrolldelay="500"> Well smert peepler us!</p></marquee>
+<marquee direction="right" scrolldelay="500"> Well smert peeple r us!</p></marquee>
 
 <div id="the_hate_maker">SMERT!!!</div>
 <p>

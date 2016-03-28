@@ -1,13 +1,13 @@
 <?php
-$firstnameERR = $lastnameERR = $usernameERR = $passwordERR = $password2ERR = $emailERR = $catsERR = $termsERR = " ";
-$firstname = $lastname = $username = $password = $password2 = $email = $cats = $terms = " ";
+$firstnameERR = $lastnameERR = $usernameERR = $passwordERR = $password2ERR = $emailERR = $catsERR = $termsERR = "";
+$firstname = $lastname = $username = $password = $password2 = $email = $cats = $terms = "";
 
 $server = "localhost"; $user = "root"; $pass = "owaspbwa"; $dbname = "smertpeepler";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (empty($_POST["firstname"])) {
-		$firstnameERR =  "*First name is required";
+		$firstnameERR = "*First name is required";
 	} else {
 		$firstname = $_POST["firstname"];
 	}
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$termsERR = "*You are a liar. There are no terms and conditions.";
 	}
 
-	if (($firstnameERR == " ")&&($lastnameERR == " ")&&($usernameERR == " ")&&($passwordERR == " ")&&($password2ERR == " ")&&($emailERR == " ")&&($catsERR == " ")&&($termsERR == " ")) {
+	if (($firstnameERR == "")&&($lastnameERR == "")&&($usernameERR == "")&&($passwordERR == "")&&($password2ERR == "")&&($emailERR == "")&&($catsERR == "")&&($termsERR == "")) {
 		$conn = new mysqli($server, $user, $pass, $dbname);
 		if ($conn->connect_error) {
 			die("Connection failed: ". $conn->connect_error);
@@ -70,7 +70,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <html>
 <body>
-
+<style>
+.error {color: red;}
+</style>
 
 <h1>Register</h1>
 
@@ -82,30 +84,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <br>
 
 <form action="<?php echo ($_SERVER["PHP_SELF"]);?>" method="POST">
+
 	First name:<br>
-	<input type="text" name="firstname">
+	<input type="text" name="firstname" value="<?php echo $firstname;?>">
 	<span class="error"> <?php echo $firstnameERR;?></span><br>
+
 	Last name:<br>
-	<input type="text" name="lastname">
+	<input type="text" name="lastname" value="<?php echo $lastname;?>">
 	<span class="error"> <?php echo $lastnameERR;?></span><br>
+
 	Desired username:<br>
-	<input type="text" name="username">
+	<input type="text" name="username" value="<?php echo $username;?>">
 	<span class="error"> <?php echo $usernameERR;?></span><br>
+
 	Password:<br>
-	<input type="text" name="password">
+	<input type="text" name="password" value="<?php echo $password;?>">
 	<span class="error"> <?php echo $passwordERR;?></span><br>
+
 	Re-type password:<br>
 	<input type="text" name="password2">
 	<span class="error"> <?php echo $password2ERR;?></span><br>
+
 	E-mail:<br>
-	<input type="text" name="email">
+	<input type="text" name="email" value="<?php echo $email;?>">
 	<span class="error"> <?php echo $emailERR;?></span><br><br>
+
 	Do you like cats?<br>
 	Yes!<input type="radio" name="cats" value="yes">
 	No.<input type="radio" name="cats" value="no">
 	<span class="error"> <?php echo $catsERR;?></span><br><br>
+
 	<input type="checkbox" name="terms" value="yes">I have read the terms and conditions.<br>
 	<span class="error"> <?php echo $termsERR;?></span><br>
+
 	<input type="submit" value="Register"><br>
 	<br>
 
