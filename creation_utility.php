@@ -51,7 +51,7 @@ if ($_POST["Create_Session_Table"] == "Create Session Table"){
 
 	$conn=new mysqli($server, $user, $pass, $dbname);
 	if ($conn->connect_error) {
-		die("Stop doing it wrong: " . $conn->connect-error);
+		die("What are you doing???: " . $conn->connect-error);
 	}
 
 	$sql="CREATE TABLE session (
@@ -62,7 +62,7 @@ if ($_POST["Create_Session_Table"] == "Create Session Table"){
 	if ($conn->query($sql) === TRUE) {
 		echo "YAY!";
 	} else {
-		echo "BAD!!! Don't do that: " . $conn->error;
+		echo "Quit it. You're breaking things: " . $conn->error;
 	}
 
 	$conn->close();

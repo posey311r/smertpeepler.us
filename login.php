@@ -18,21 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$password = $_POST["password"];
 	}
 	if (($usernameERR == "")&&($passwordERR == "")) {
-//		echo "no errors";	
 		$conn = mysql_connect($server, $user, $pass) or die(mysql_error());
 		$db = mysql_select_db($dbname, $conn) or die(mysql_error());
-//		if ($conn->connect_error) {
-//			die("Connection  failed: " . $conn->connect_error);
-//		}
-//		echo "What the fucl";	
 		$query = "SELECT * FROM users WHERE username = '" . $username . "' AND  password = '" . $password . "'";
-		echo "Query is $query";		
 		$result = mysql_query($query);
-//		echo "Result is $result";		
 		$row = mysql_fetch_array($result);
-		echo "Row is $row";
 		if (!empty($row['username']) AND !empty($row['password'])) {
-			echo "YAY! YOU DONT TOTALLY SUCK AT LIFE.";
+			echo "Login Successful.";
+			header( "refresh:1;url=user_home.php" );
 		} else {
 			echo "BOO. YOU ARE THE WORST. KILL YOURSELF.";
 		}

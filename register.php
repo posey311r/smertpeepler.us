@@ -59,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		if ($conn->query($sql) === TRUE) {
 			echo "Account successfully registered!!!";
+			header( "refresh:5;url=login.php" );
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
